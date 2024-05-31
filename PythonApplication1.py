@@ -12,7 +12,7 @@ size = 32
 epochs = 10
 im_size = 32
 N_classes = 10
-file = "cifar10.gz"
+file = "./cifar10.gz"
 
 class LeNet5(nn.Module):
     def __init__(self,n_classes):
@@ -65,7 +65,7 @@ test_set = torchvision.datasets.MNIST(
     ])
 )
  
-# train_loader, test_loader »ý¼º
+# train_loader, test_loader Â»Ã½Â¼Âº
 train_loader = torch.utils.data.DataLoader(train_set, batch_size=batch_size)
 test_loader = torch.utils.data.DataLoader(test_set, batch_size=batch_size)
 
