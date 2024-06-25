@@ -49,8 +49,8 @@ class LeNet5_with_BN(nn.Module):
         y = F.max_pool2d(F.relu(self.conv1(x)))
         y = F.max_pool2d(F.relu(self.conv2(y)))
         y = torch.flatten(y)
-        y = F.relu(self.fc1(y))
-        y = F.relu(self.fc2(y))
+        y = F.relu(torch.nn.BatchNorm1d(self.fc1(y)))
+        y = F.relu(torch.nn.BatchNorm1d(self.fc2(y)))
         y = self.fc3(y)
         return y
 
